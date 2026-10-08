@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #2b2923;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            color: #e6e4dc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            height: 70px;
+            width: 100%;
+            background-color: #CAC8BE;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+
+        }
+
+.folk-avatar {
+    width: 140px;
+    height: 140px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    flex-shrink: 0;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+        .navbar .logo {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .navbar .nav-items {
+            height: 35px;
+            width: auto;
+            max-width: 70%;
+            object-fit: contain;
+        }
+
+        /* HERO / MIDDLE SECTION */
+        .hero-section {
+            width: 100%;
+            background-color: #5A5749;
+            padding: 35px 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            min-height: 260px;
+        }
+
+        .hero-content {
+            flex: 1 1 45%;
+            max-width: 650px;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .hero-art {
+            flex: 1 1 55%;
+            min-width: 0;
+            max-width: 55%;
+            max-height: 320px;
+            object-fit: contain;
+            object-position: right center;
+        }
+
+        .hero-top-row {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .folk-avatar {
+            width: 140px;
+            height: 140px;
+            background-color: #ffffff;
+            border-radius: 6px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .name-card {
+            flex-grow: 1;
+            min-width: 0;
+            background-color: #413E35;
+            border-radius: 6px;
+            min-height: 140px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .name-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+            overflow-wrap: anywhere;
+        }
+
+        .name-title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #b5b2a6;
+            letter-spacing: 0.5px;
+        }
+
+        .down-middle {
+            width: 100%;
+            height: 55px;
+            background-color: #413E35;
+            border-radius: 6px;
+        }
+
+        /* ARROW SEPARATOR */
+        .divider-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 0;
+            background-color: #2b2923;
+        }
+
+        .arrow-img {
+            width: 32px;
+            height: 32px;
+            opacity: 0.85;
+            transition: transform 0.3s ease;
+        }
+
+        .arrow-img:hover {
+            transform: translateY(4px);
+        }
+
+        /* FEATURED SHOWCASE */
+        .showcase-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+        }
+
+        .showcase-title {
+            text-align: center;
+            color: #d8d5cb;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background-color: #3b3830;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #4a473c;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-media {
+            width: 100%;
+            height: 190px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-media img.contain-fit {
+            object-fit: contain;
+            padding: 15px;
+        }
+
+        .card-body {
+            padding: 16px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            background-color: #3b3830;
+        }
+
+        .card-body a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: #b5b2a6;
+            line-height: 1.4;
+        }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 900px) {
+            .hero-section {
+                padding: 25px 20px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-art {
+                display: none;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-top-row {
+                flex-direction: column;
+            }
+
+            .folk-avatar {
+                width: 100%;
+                height: 120px;
+            }
+
+            .name-text {
+                font-size: 1.4rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <img src="logo.png" alt="Logo" class="logo">
+        <img src="navbar.png" alt="Navigation" class="nav-items">
+    </header>
+
+    <!-- HERO SECTION -->
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-top-row">
+                    <img src="face.png" alt="Hariz" class="folk-avatar">
+                    <div class="name-card">
+                        <h1 class="name-text">9b Hariz dananto prayata huda</h1>
+                        <p class="name-title">Dian Didaktika Scholar</p>
+                    </div>
+                </div>
+                <div class="down-middle"></div>
+            </div>
+            <img src="HARIZ DANAN.png" alt="Hariz Danan" class="hero-art">
+        </section>
+
+        <!-- ARROW SEPARATOR -->
+        <div class="divider-section">
+            <svg class="arrow-img" viewBox="0 0 24 24" fill="none" stroke="#d8d5cb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Scroll down">
+                <path d="M12 4v16M5 13l7 7 7-7"/>
+            </svg>
+        </div>
+
+        <!-- FEATURED SHOWCASE -->
+        <section class="showcase-container">
+            <h2 class="showcase-title">Featured Showcase</h2>
+
+            <div class="cards-grid">
+                <article class="card">
+                    <div class="card-media">
+                        <img src="diand.jpeg" alt="Diand">
+                    </div>
+                    <div class="card-body">
+                        <a href="https://diandidaktika.sch.id/">
+                            <h3 class="card-title">Dian didaktika</h3>
+                            <p class="card-desc">Link ke sekolah</p>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media">
+                        <img src="tree.jpeg" alt="Tree">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Portofolio</h3>
+                        <p class="card-desc">Portofolio sekolah</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media">
+                        <img src="coffe.png" alt="Coffee" class="contain-fit">
+                    </div>
+                    <div class="card-body">
+                        <a href="https://ittheitok.github.io/komik/">
+                            <h3 class="card-title">Website komik</h3>
+                            <p class="card-desc">Website display komik.</p>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
